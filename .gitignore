@@ -1,0 +1,6 @@
+# Ignore the python virtual environment, for now.
+venv/
+
+# Ignore vim swap files
+*.swp
+*.swo
