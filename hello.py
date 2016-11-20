@@ -1,3 +1,4 @@
+# https://www.tutorialspoint.com/flask
 from flask import Flask, redirect, url_for
 app = Flask(__name__)
 
@@ -33,6 +34,9 @@ def goodbye_user(user):
     return 'Goodbye, %s.' % (user)
 
 if __name__ == '__main__':
+    # Before running this app, install Flask.
+    # Then run it using python hello.py
+    #
     # If run in debug mode, the server will reload itself every time the code changes.
     app.run(debug = True)
     # app.run
