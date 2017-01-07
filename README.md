@@ -26,3 +26,5 @@ An example of this is provided by js_and_css.py. This uses a template and javasc
 I skipped the section on cookies.
 
 I also skipped the section on session data.
+
+Flashing messages is covered in flash.py
