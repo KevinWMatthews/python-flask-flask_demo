@@ -1,3 +1,5 @@
+# Read js and css from /static.
+
 from flask import Flask, render_template
 app = Flask(__name__)
 

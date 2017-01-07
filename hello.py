@@ -1,9 +1,17 @@
+# Before running this app, install Flask.
+# Then run it using python hello.py
+#
 # https://www.tutorialspoint.com/flask
 from flask import Flask, redirect, url_for
 app = Flask(__name__)
 
-# Browse to this URL to view the page defined by the hello_world() function.
-# We're using the decorator '@' to bind the two.
+# @route(rule, options)
+# Bind the URL given in rule to the function that follows.
+#
+# Browsing to the given URL calls the method that is bound to it.
+# This method populates the web page.
+#
+# '@' is a decorator that binds the methods.
 @app.route('/')
 @app.route('/index')
 def index():
@@ -20,11 +28,17 @@ def hello_world():
 @app.route('/hello_<user>')
 def hello_user(user):
     if user == 'admin':
+        # redirect(location, ...)
+        # location is the url to which the user will be redirected
+        #
+        # url_for(endpoint, **values)
+        # Generate a url a method (endpoint)
         return redirect(url_for('hello_admin')) # Pass the function name, not the URL (hence url_FOR).
     else:
         return 'Hello, %s!' % (user)
 
 # This is equivalent to the route decorator.
+# It is not preferred since it is more verbose.
 def goodbye_world():
     return 'Goodbye, world.'
 app.add_url_rule('/goodbye', 'goodbye', goodbye_world)
@@ -34,9 +48,9 @@ def goodbye_user(user):
     return 'Goodbye, %s.' % (user)
 
 if __name__ == '__main__':
-    # Before running this app, install Flask.
-    # Then run it using python hello.py
-    #
-    # If run in debug mode, the server will reload itself every time the code changes.
+    # app.run(host, port, debug, options)
+    # host      defaults to localhost (127.0.0.1)
+    # port      defaults to 5000
+    # debug     when true, the server will reload itself every time the code changes.
     app.run(debug = True)
     # app.run
