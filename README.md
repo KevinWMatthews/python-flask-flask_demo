@@ -22,3 +22,5 @@ More complex templates can be found in loops.py and templates/loops.html.
 During development, CSS and JS are traditionally read from a /static directory.
 During run time, these are provided by the server.
 An example of this is provided by js_and_css.py. This uses a template and javascript.
+
+I skipped the section on cookies.
