@@ -3,13 +3,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def get_me_some_data():
-    return render-template('get_me_some_data.html')
+    return render_template('get_me_some_data.html')
 
 @app.route('/result', methods = ['POST', 'GET'])
-def show_me_some_data():
+def result():
     if request.method == 'POST':
+        # This gets the results of the request as a dictionary object.
         result = request.form
-        return render_template('show_me_some_data.html', result = result)
+        # We pass the dictionary object to the html template, which parses and uses it.
+        return render_template('result.html', result = result)
 
 if __name__ == '__main__':
     app.run(debug = True)
