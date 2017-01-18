@@ -4,3 +4,6 @@ venv/
 # Ignore vim swap files
 *.swp
 *.swo
+
+# Ignore Konqueror files
+.directory
